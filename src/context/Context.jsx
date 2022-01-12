@@ -9,24 +9,23 @@ export const DataContext = React.createContext();
 const DataProvider = (props) => {
 
   // const [loading, setLoading] = useState(false);
+  // useEffect(() => {
+  //     console.log('ejecutando')
+  //     try {
+  //       getData()
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+    
+  // },[]);
 
-  useEffect(() => {
-    try {
-     prueba()
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
 
- const prueba = () => {
-   console.log('context conectado')
-   
- }
+
   /////
   return (
     <DataContext.Provider
       value={{
-       prueba
+       
       }}
     >
       {props.children}

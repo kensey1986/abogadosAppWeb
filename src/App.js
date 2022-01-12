@@ -1,18 +1,22 @@
 import React, { useContext, Fragment, useEffect } from "react";
 import { DataContext } from "./context/Context";
 
-import logo from './logo.svg';
 import './App.css';
+import  {NavBar}  from "./components/navBar/navBar";
+import { Home } from "./pages/home/home";
+import { Footer } from "./components/footer/footer";
 
 function App() {
-  const { prueba } = useContext(DataContext);
+  const {  } = useContext(DataContext);
 
+  
 
   return (
-    <div className="App">
-    hola
-     
-    </div>
+    <>
+        <NavBar/>
+        <Home/>
+        <Footer/>
+    </>
   );
 }
 
