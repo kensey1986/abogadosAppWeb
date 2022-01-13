@@ -3,108 +3,40 @@
 }
 
  /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {
-    .container-logo{
-        display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: flex-start;
-        width: 100%;
-        color: whitesmoke;
-}
 
-.logo{
-    width: 7.5rem;
-}
-
-.container-parte-2{
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    margin-left: 2.5rem;
-    padding-top: 1.25rem;
-}
-
-.container-parte-2 h6{
-    display: none;
- } 
- .icon-menu{
-     margin-left: 1.875rem;
-     margin-bottom: .625rem; 
- }
-
-  }
-
-   /* Medium devices (tablets, 768px and up) */
-
-  @media (min-width: 768px) {
-    .container-logo{
-        display: flex;
-		flex-direction: row;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: flex-start;
-        width: 100%;
-        color: whitesmoke;
-}
-
-.logo{
-    width: 10rem;
-}
-
-.container-parte-2{
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    margin-left: 180px;
-    padding-top: 1.25rem;
-}
-.container-parte-2 h6{
-    display: flex;
- } 
-
- .icon-menu{
-     margin-left: 3.125rem;
- }
-
-  }
-
-  /* Large devices (desktops, 992px and up) */
-  @media (min-width: 992px) {
-     
-    .container-logo{
-        width: 35%;
-       position: relative;
-}
-
-.logo{
-    width: 10rem;
-}
-
-.container-parte-1{
-    position: absolute;
-    margin-left: -50px;
-    margin-top: -10px;
+@media (min-width: 375px)  {
    
+    .container-logo{
+       display: flex;
+       flex-direction: row-reverse;
+       flex-wrap: nowrap;
+        margin: 0;
+        padding: 0;
+        color: whitesmoke;
+        box-sizing: border-box;
+    }
+
+.logo{
+    width: 8.75rem;
 }
-.container-parte-2{
-    margin-left: 150px;
+.container-logo-parte-1{
+   margin-left: 30px;
   
 }
+.container-logo-parte-2{
+   padding-top: 10px;
 
-/* 
-.container-parte-2{
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    margin-left: 180px;
-    padding-top: 1.25rem;
+}
+.container-logo-parte-2 h6{
+  font-size: 15px;
+}
+.container-menu{
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
- .icon-menu{
-     margin-left: 3.125rem;
-     margin-bottom: .625rem; 
- } */
+}
 
-  }
+@media (min-width: 375px)  {
+    
+}
