@@ -2,7 +2,8 @@
     background: #8D292B;
 }
 
-@media (max-width: 600px) {
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
     .container-logo{
         display: flex;
 		flex-direction: row;
@@ -10,18 +11,12 @@
 		justify-content: center;
 		align-items: flex-start;
         width: 100%;
-        margin: .625rem 0;
         color: whitesmoke;
 }
 
 .logo{
-    width: 120px;
+    width: 7.5rem;
 }
-
-
-
-
-
 
 .container-parte-2{
     align-items: flex-end;
@@ -34,10 +29,82 @@
 .container-parte-2 h6{
     display: none;
  } 
-
  .icon-menu{
      margin-left: 1.875rem;
-     margin-bottom: 10px;    
+     margin-bottom: .625rem; 
  }
+
+  }
+
+   /* Medium devices (tablets, 768px and up) */
+
+  @media (min-width: 768px) {
+    .container-logo{
+        display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+        width: 100%;
+        color: whitesmoke;
+}
+
+.logo{
+    width: 10rem;
+}
+
+.container-parte-2{
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 180px;
+    padding-top: 1.25rem;
+}
+.container-parte-2 h6{
+    display: flex;
+ } 
+
+ .icon-menu{
+     margin-left: 3.125rem;
+ }
+
+  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {
+     
+    .container-logo{
+        width: 35%;
+       position: relative;
+}
+
+.logo{
+    width: 10rem;
+}
+
+.container-parte-1{
+    position: absolute;
+    margin-left: -50px;
+    margin-top: -10px;
+   
+}
+.container-parte-2{
+    margin-left: 150px;
+  
+}
+
+/* 
+.container-parte-2{
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 180px;
+    padding-top: 1.25rem;
+}
+
+ .icon-menu{
+     margin-left: 3.125rem;
+     margin-bottom: .625rem; 
+ } */
 
   }

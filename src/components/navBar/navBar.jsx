@@ -27,8 +27,9 @@ export const BarNav = () => {
                         <h1> <strong> Garcia & Asociados. </strong></h1>
                     </Col>
                 </Row>
-            </Container>
-            <Container>
+            
+                <Row>
+                    <Col>
                 <Navbar.Toggle className='icon-menu' aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse  id="responsive-navbar-nav">
                     <Nav className="me-auto">
@@ -52,6 +53,8 @@ export const BarNav = () => {
                         </Nav.Link>
                     </Nav> */}
                 </Navbar.Collapse>
+                </Col>
+                </Row>
             </Container>
         </Navbar>
     )
