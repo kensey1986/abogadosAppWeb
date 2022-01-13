@@ -118,13 +118,13 @@
  }
  .container-logo-parte-1{
      position: relative;
-     margin: -10px;
+     margin: -0.625rem;
    
  }
  .container-logo-parte-2{
     position: relative;
-    margin-left: -120px;
-    padding-bottom: 10px;
+    margin-left: -7.5rem;
+    padding-bottom: .625rem;
     
  
  }
@@ -133,8 +133,8 @@
  }
  .container-menu{
     position: relative;
-    margin-left: -500;
-    padding-top: 80px;
+    margin-left: -31.25rem;
+    padding-top: 5rem;
  }
 }
 
@@ -143,6 +143,7 @@
         margin: 0;
         padding: 0;
         box-sizing: content-box;
+        height: 100px;
     }
     .container-logo{
         display: flex;
@@ -154,16 +155,16 @@
      }
  
  .logo{
-     width: 150px;
+     width: 120px;
  }
  .container-logo-parte-1{
      position: relative;
-     margin-left: -90px;
+     margin-left: -5.625rem;
     
  }
  .container-logo-parte-2{
     position: relative;
-    margin-left: -100px;
+    margin-left: -6.25rem;
   
     
  
@@ -171,10 +172,11 @@
  .container-logo-parte-2 h6{
    font-size: .9375rem;
  }
+ .container-logo-parte-2 h1{
+    font-size: 30px;
+  }
  .container-menu{
-    position: relative;
-   
-    padding-top: 80px;
+    
  }
 }
 
