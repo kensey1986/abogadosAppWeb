@@ -1,0 +1,43 @@
+.navBar{
+    background: #8D292B;
+}
+
+@media (max-width: 600px) {
+    .container-logo{
+        display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: flex-start;
+        width: 100%;
+        margin: .625rem 0;
+        color: whitesmoke;
+}
+
+.logo{
+    width: 120px;
+}
+
+
+
+
+
+
+.container-parte-2{
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 2.5rem;
+    padding-top: 1.25rem;
+}
+
+.container-parte-2 h6{
+    display: none;
+ } 
+
+ .icon-menu{
+     margin-left: 1.875rem;
+     margin-bottom: 10px;    
+ }
+
+  }
