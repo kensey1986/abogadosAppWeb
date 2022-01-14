@@ -1,19 +1,31 @@
 
 @media (min-width: 375px)  {
 
+    .carousel-caption{
+        padding-bottom: 0 !important;
+    }
     .carousel-cotainer h3{
         font-size: 18px;
+        padding-top: 10px;
+
     }
  }
 
  @media (min-width:576px)  {
+    .carousel-caption{
+        padding-bottom: 1.25rem !important;
+    }
     .carousel-cotainer h3{
         font-size: 24px;
+       
     }
 
 }
 
 @media (min-width:768px)  {
+    .carousel-caption{
+        padding-bottom: 4.375rem !important;
+    }
     .carousel-cotainer h3{
         font-size: 30px;
        
@@ -21,8 +33,21 @@
 }
 
 @media (min-width: 992px)  {
+    .carousel-caption{
+        padding-bottom:  5.625rem!important;
+    }
     .carousel-cotainer h3{
         font-size: 36px;
+       
+    }
+}
+
+@media (min-width: 1200px)  {
+    .carousel-caption{
+        padding-bottom: 10rem!important;
+    }
+    .carousel-cotainer h3{
+        font-size: 40px;
        
     }
 }

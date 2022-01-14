@@ -23,6 +23,10 @@
 }
 
 @media (min-width: 992px)  {
+    .cards-text{
+        height: 365px;
+        
+    }
     .img-card{
         height: 400px;
     }
