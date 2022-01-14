@@ -1,0 +1,29 @@
+
+@media (min-width: 375px)  {
+
+    .carousel-cotainer h3{
+        font-size: 18px;
+    }
+ }
+
+ @media (min-width:576px)  {
+    .carousel-cotainer h3{
+        font-size: 24px;
+    }
+
+}
+
+@media (min-width:768px)  {
+    .carousel-cotainer h3{
+        font-size: 30px;
+       
+    }
+}
+
+@media (min-width: 992px)  {
+    .carousel-cotainer h3{
+        font-size: 36px;
+       
+    }
+}
+

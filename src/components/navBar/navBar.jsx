@@ -12,7 +12,7 @@ import logo from '../../assets/logo/logo.png';
 
 export const BarNav = () => {
     return (
-        <Navbar className='navBar' collapseOnSelect expand="lg" variant="dark">
+        <Navbar className='navBar' collapseOnSelect expand="lg" variant="dark" fixed="top">
             <Container>
                 <Row className='container-logo'>
                     <Col className='container-logo-parte-1'>

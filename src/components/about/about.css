@@ -1,0 +1,38 @@
+@media (min-width: 375px)  {
+
+    .card{
+        margin: 5px 5px 10px 5px;
+    }
+    .img-card{
+        height: 200px;
+    }
+
+}
+
+@media (min-width:576px)  {
+    .img-card{
+        height: 230px;
+    }
+
+}
+
+@media (min-width:768px)  {
+    .img-card{
+        height: 350px;
+    }
+}
+
+@media (min-width: 992px)  {
+    .img-card{
+        height: 400px;
+    }
+}
+
+@media (min-width: 1200px)  {
+    .cards-text{
+        height: 270px;
+        
+    }
+}
+
+

@@ -1,0 +1,33 @@
+@media (min-width: 375px)  {
+    .container-home{
+        box-sizing: border-box;
+        margin-top: 210px;
+        
+    }
+
+}
+
+@media (min-width:576px)  {
+    .container-home{
+        box-sizing: border-box;
+        margin-top: 230px;
+        
+    }
+}
+
+@media (min-width: 992px)  {
+    .container-home{
+        box-sizing: border-box;
+        margin-top: 160px;
+        
+    }
+}
+
+@media (min-width: 1200px)  {
+    .container-home{
+        box-sizing: border-box;
+        margin-top: 120px;
+        
+    }
+}
+
