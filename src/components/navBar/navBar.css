@@ -1,103 +1,37 @@
-.navBar{
-    background: #8D292B;
+.container-navbar{
+    background: #8D292B !important;
 }
-
- /* Small devices (landscape phones, 576px and up) */
-
-@media (min-width: 375px)  {
-   
-    .container-logo{
-       display: flex;
-       flex-direction: row-reverse;
-       flex-wrap: nowrap;
-        margin: 0;
-        padding: 0;
+.MuiList-root{
+    background: #C2383A!important;
         color: whitesmoke;
-        box-sizing: border-box;
     }
 
-.logo{
-    width: 8.75rem;
-}
-.container-logo-parte-1{
-   margin-left: 1.875rem;
-  
-}
-.container-logo-parte-2{
-   padding-top: .625rem;
 
-}
-.container-logo-parte-2 h6{
-  font-size: .9375rem;
-}
-.container-menu{
-    margin-top: 0;
-    margin-bottom: .625rem;
-}
-
-}
-
-@media (min-width:576px)  {
-    .container-logo{
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-         margin: 0;
-         padding: 0;
-         color: whitesmoke;
-         box-sizing: border-box;
-     }
- 
- .logo{
-     width: 10rem;
- }
- .container-logo-parte-1{
-    margin-left: 150px;
+@media (min-width: 375px)  {
+    .logo-navbar-mobil{
+        width: 8.75rem;
+    }
    
- }
- .container-logo-parte-2{
-    padding-top: .625rem;
- 
- }
- .container-logo-parte-2 h6{
-   font-size: .9375rem;
- }
- .container-menu{
-     margin-top: 0;
-     margin-bottom: .625rem;
- }
 }
 
-@media (min-width:768px)  {
-    .container-logo{
-        display: flex;
-        flex-direction: row-reverse;
-        flex-wrap: nowrap;
-         margin: 0;
-         padding: 0;
-         color: whitesmoke;
-         box-sizing: border-box;
-     }
- 
- .logo{
-     width: 10rem;
- }
- .container-logo-parte-1{
-    margin-left: 250px;
+@media (min-width: 992px)  {
+
+    .logo-navbar{
+        width:100PX;
+    }
    
- }
- .container-logo-parte-2{
-    padding-top: .625rem;
- 
- }
- .container-logo-parte-2 h6{
-   font-size: .9375rem;
- }
- .container-menu{
-     margin-top: 0;
-     margin-bottom: .625rem;
- }
 }
+
+@media (min-width: 1200px)  {
+
+    .logo-navbar{
+        width:100PX;
+    }
+    .css-1t6c9ts{
+        padding-left: 200px;
+    }
+}
+/*
 
 @media (min-width: 992px)  {
     .container{
@@ -177,6 +111,6 @@
   }
 
  
-}
+} */
 
 

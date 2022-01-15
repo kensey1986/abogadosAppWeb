@@ -1,60 +1,155 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Nav from 'react-bootstrap/Nav';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Image from 'react-bootstrap/Image'
-import './navBar.css';
-import logo from '../../assets/logo/logo.png';
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import Menu from '@mui/material/Menu';
+import MenuIcon from '@mui/icons-material/Menu';
+import Container from '@mui/material/Container';
+import Avatar from '@mui/material/Avatar';
+import Button from '@mui/material/Button';
+import Tooltip from '@mui/material/Tooltip';
+import MenuItem from '@mui/material/MenuItem';
+import logo from '../../assets/logo/logo.png'
+import './navBar.css'
 
+const pages = ['INICIO', 'SERVICIOS', 'QUIENES SOMOS', 'NUESTROS PROFESIONALES', 'CONTACTANOS'];
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const BarNav = () => {
-    return (
-        <Navbar className='navBar' collapseOnSelect expand="lg" variant="dark" fixed="top">
-            <Container>
-                <Row className='container-logo'>
-                    <Col className='container-logo-parte-1'>
-                        <Image
-                            className="logo"
-                            src={logo}
-                            alt="Garcia & Asociados"
-                        />
-                    </Col>
-                    <Col className='container-logo-parte-2' >
-                        <h6>COLECTIVO DE ABOGADOS.</h6>
-                        <h1> <strong> Garcia & Asociados. </strong></h1>
-                    </Col>
-                </Row>
-                <Row className='container-menu'>
-                    <Col>
-                        <Navbar.Toggle className='icon-menu' aria-controls="responsive-navbar-nav" />
-                        <Navbar.Collapse id="responsive-navbar-nav">
-                            <Nav className="me-auto">
-                                <Nav.Link href="#features">INICIO</Nav.Link>
-                                <NavDropdown title="SERVICIOS" id="collasible-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1">Servicio 1</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Servicio 2</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Servicio 3</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.4">Servicio 4</NavDropdown.Item>
-                                    <NavDropdown.Divider />
-                                    <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                                </NavDropdown>
-                                <Nav.Link href="#pricing">QUIENES SOMOS</Nav.Link>
-                                <Nav.Link href="#pricing">NUESTROS PROFESIONALES</Nav.Link>
+    const [anchorElNav, setAnchorElNav] = React.useState(null);
+    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-                            </Nav>
-                            {/* <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
-                        </Nav.Link>
-                    </Nav> */}
-                        </Navbar.Collapse>
-                    </Col>
-                </Row>
+    const handleOpenNavMenu = (event) => {
+        setAnchorElNav(event.currentTarget);
+    };
+    const handleOpenUserMenu = (event) => {
+        setAnchorElUser(event.currentTarget);
+    };
+
+    const handleCloseNavMenu = () => {
+        setAnchorElNav(null);
+    };
+
+    const handleCloseUserMenu = () => {
+        setAnchorElUser(null);
+    };
+
+    return (
+        <AppBar position="static" className='container-navbar'>
+            <Container maxWidth="xl">
+                <Toolbar disableGutters>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ display: { xs: 'none', md: 'flex' } }}
+                    >
+                        <img className='logo-navbar' src={logo} alt="Garcia&Asociados" />
+                    </Typography>
+                    <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'none', md: 'flex' } }}
+                        >
+                            <strong>
+                                GARCIA &<br/>ASOCIADOS
+                            </strong>
+                        </Typography>
+                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        <IconButton
+                            size="large"
+                            aria-label="account of current user"
+                            aria-controls="menu-appbar"
+                            aria-haspopup="true"
+                            onClick={handleOpenNavMenu}
+                            color="inherit"
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <Menu
+                            id="menu-appbar"
+                            anchorEl={anchorElNav}
+                            anchorOrigin={{
+                                vertical: 'bottom',
+                                horizontal: 'left',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'left',
+                            }}
+                            open={Boolean(anchorElNav)}
+                            onClose={handleCloseNavMenu}
+                            sx={{
+                                display: { xs: 'block', md: 'none' },
+                            }}
+                        >
+                            {pages.map((page) => (
+                                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{page}</Typography>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="div"
+                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+                    >
+                        <img className='logo-navbar-mobil' src={logo} alt="Garcia&Asociados" />
+                    </Typography>
+                    <Box sx={{  flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+                        {pages.map((page) => (
+                            <Button
+                                key={page}
+                                onClick={handleCloseNavMenu}
+                                sx={{ ml:5, mt: 4, color: 'white', display: 'block' }}
+                            >
+                                {page}
+                            </Button>
+                        ))}
+                    </Box>
+
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="div"
+                            sx={{ display: { xs: 'flex', md: 'none' } }}
+                        >
+                            <strong>
+                                GARCIA &<br/>ASOCIADOS
+                            </strong>
+                        </Typography>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {settings.map((setting) => (
+                                <MenuItem key={setting} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center">{setting}</Typography>
+                                </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+                </Toolbar>
             </Container>
-        </Navbar>
-    )
-}
+        </AppBar>
+    );
+};
