@@ -1,4 +1,5 @@
 import React, { Component, useContext } from 'react';
+import { Link } from "react-router-dom";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
 import CardContent from '@mui/material/CardContent';
@@ -13,6 +14,7 @@ import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
+import Button from '@mui/material/Button';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -32,22 +34,28 @@ const Item = styled(Paper)(({ theme }) => ({
 const ExpandMore = styled((props) => {
     const { expand, ...other } = props;
     return <IconButton {...other} />;
-  })(({ theme, expand }) => ({
+})(({ theme, expand }) => ({
     transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
     marginLeft: 'auto',
     transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
+        duration: theme.transitions.duration.shortest,
     }),
-  }));
+}));
+
+const LinkStyle = styled(Link)(() => ({
+    textDecoration: 'none',
+    
+}));
 export const Lawyers = () => {
     const { data } = useContext(DataContext);
     console.log(data);
 
     const [expanded, setExpanded] = React.useState(false);
 
-  const handleExpandClick = () => {
-    setExpanded(!expanded);
-  };
+    const handleExpandClick = (e) => {
+        console.log(e)
+        setExpanded(!expanded);
+    };
     return (
         <Container sx={{ marginLeft: { xl: 24 }, marginY: { xs: 2 }, }}>
             <Grid container spacing={3} >
@@ -55,32 +63,56 @@ export const Lawyers = () => {
                 {
                     data.map((lawyers) => {
                         return (
-                            <Grid item={true} item xs={12} md={6} xl={6} lg={4} key={uuidv4()}>
+                            <Grid item={true} item xs={12} sm={12} md={6}  lg={4}  key={uuidv4()}>
                                 <Item>
                                     <Card >
-                                        <CardHeader sx={{ minHeight:100}}
+                                        <CardHeader sx={{ minHeight: 100 }}
                                             avatar={
                                                 <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                                                   {lawyers.initial}
+                                                    {lawyers.initial}
                                                 </Avatar>
                                             }
-                                           
                                             title={lawyers.name}
-                                            subheader=" Cel: 315 444 22 33"
                                         />
                                         <CardMedia
                                             component="img"
-                                            sx={{ marginLeft:10, height:{ xs: 200, sm: 300, lg: 300 }, width:{ xs: 200, sm: 300, lg: 214 }}}
+                                            sx={{ marginLeft: 10, height: { xs: 200, sm: 300, lg: 300 }, width: { xs: 200, sm: 300, lg: 214 } }}
                                             image={lawyers.img}
                                             alt="Paella dish"
                                         />
                                         <CardContent>
-                                           
-                                        </CardContent>
-                                        <CardActions disableSpacing>
-                                        <Typography variant="h6" color="text.secondary">
-                                        Bibliografía.
+                                            <Typography sx={{ textAlign: 'left' }}
+                                                variant="h6" color="text.secondary">
+                                                Contacto.
                                             </Typography>
+                                            <Typography sx={{ textAlign: 'right' }}
+                                                variant="body2" color="text.secondary">
+                                                Cel: {lawyers.num}
+                                            </Typography>
+                                            <Typography sx={{ textAlign: 'right' }}
+                                                variant="body2" color="text.secondary">
+                                                Whts: {lawyers.whts}
+                                            </Typography>
+                                        </CardContent>
+                                        <CardActions>
+                                            <LinkStyle
+                                                to="/">
+                                                <Button
+                                                    variant="text"
+                                                    color="secondary"
+                                                    size="small"
+
+                                                >
+                                                    !Historias de exitos¡
+                                                </Button>
+                                            </LinkStyle>
+
+                                        </CardActions>
+                                        <CardActions disableSpacing>
+                                            <Typography variant="h6" color="text.secondary">
+                                                Bibliografía.
+                                            </Typography>
+
                                             <ExpandMore
                                                 expand={expanded}
                                                 onClick={handleExpandClick}
@@ -90,12 +122,12 @@ export const Lawyers = () => {
                                                 <ExpandMoreIcon />
                                             </ExpandMore>
                                         </CardActions>
+                                       
                                         <Collapse in={expanded} timeout="auto" unmountOnExit>
                                             <CardContent>
                                                 <Typography sx={{ textAlign: 'justify' }} paragraph>
-                                                   {lawyers.description}
+                                                    {lawyers.description}
                                                 </Typography>
-                                                
                                             </CardContent>
                                         </Collapse>
                                     </Card>

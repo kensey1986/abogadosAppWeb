@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { styled, useTheme } from '@mui/material/styles';
+import { Link } from "react-router-dom";
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -26,6 +28,27 @@ import { withThemeCreator } from '@mui/styles';
 
 const drawerWidth = 225;
 const pages = ['INICIO', 'SERVICIOS', 'QUIENES SOMOS', 'NUESTROS PROFESIONALES', 'CONTACTANOS'];
+const pagesMenu = [{
+    "name": "INICIO",
+    "link": "/"
+},
+{
+    "name": "SERVICIOS",
+    "link": "/services"
+},
+{
+    "name": "QUIENES SOMOS",
+    "link": "/about"
+},
+{
+    "name": "NUESTROS PROFESIONALES",
+    "link": "/lawyers"
+},
+{
+    "name": "Contacto",
+    "link": "/contac"
+},
+];
 
 
 const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
@@ -82,14 +105,21 @@ const TitleLogo = styled('div')(() => ({
 
 const TitleLogoMobil = styled('div')(() => ({
     background: '#C2383A!important',
-   marginTop: '25px',
-   marginLeft: '20px'
+    marginTop: '25px',
+    marginLeft: '20px'
 
 }));
 
 const ContainerImg = styled('img')(() => ({
     maxWidth: '95px'
 
+}));
+
+const LinkStyle = styled(Link)(() => ({
+    textDecoration: 'none',
+    '&:hover': {
+        backgroundColor: '#C2383A',
+      },
 }));
 
 export const NavBar1 = () => {
@@ -107,93 +137,96 @@ export const NavBar1 = () => {
 
     return (
         <>
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar position="fixed" open={open}>
-                <Toolbar>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        onClick={handleDrawerOpen}
-                        edge="start"
-                        sx={{  display: { md: 'none' }, ...(open && { display: 'none' }) }}
-                        > 
-                        <MenuIcon />
-                    </IconButton>
-                    <ContainerImg src={logo} alt="Garcia&Asociados"
-                    sx={{ mr: 3,  ...(open && { display: 'none' }) }} />
-                    <TitleLogo sx={{ ...(open && { display: 'none' }) }}>
-                    <Typography variant="span">
-                            COLECTIVO DE ABOGADOS
-                        </Typography>
-                        
-                        <Typography variant="h6">
-                            GARCIA & ASOCIADOS
-                        </Typography>
-                    </TitleLogo>
-                    <Box sx={{  mr:2, mt:0, display: { xs: 'none', md: 'flex' }, ...(open && { display: 'none' }) }}>
-                        {pages.map((page) => (
-                            <Button
-                            key={page}
-                            variant="text"
-                            color="primary"
-                                sx={{ ml:2, mt: 4, color: 'white', display: 'block' }}
-                                >
-                                {page}
-                            </Button>
-                        ))}
-                    </Box>
-                    <ContainerImg src={logo} alt="Garcia&Asociados"  sx={{ml:6, display: { lg: 'none' }, ...(!open && {  display: 'none' }) }} />
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                sx={{
-                    width: drawerWidth,
-                    flexShrink: 0,
-                    '& .MuiDrawer-paper': {
-                        width: drawerWidth,
-                        boxSizing: 'border-box',
-                        background: '#C2383A'
-                    },
-                }}
-                variant="persistent"
-                anchor="left"
-                open={open}
-                >
-                <TitleLogoMobil>
-                <Typography variant="h6" color="white">
-                   <strong>
-                       COLECTIVO DE ABOGADOS
-                       </strong> 
-                </Typography>
-            
-                <DrawerHeader>
-                    <IconButton onClick={handleDrawerClose}>
-                        {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                    </IconButton>
-                </DrawerHeader>
-                <Divider />
-                </TitleLogoMobil>
+            <Box sx={{ display: 'flex' }}>
+                <CssBaseline />
+                <AppBar position="fixed" open={open}>
+                    <Toolbar>
+                        <IconButton
+                            color="inherit"
+                            aria-label="open drawer"
+                            onClick={handleDrawerOpen}
+                            edge="start"
+                            sx={{ display: { md: 'none' }, ...(open && { display: 'none' }) }}
+                        >
+                            <MenuIcon />
+                        </IconButton>
+                        <ContainerImg src={logo} alt="Garcia&Asociados"
+                            sx={{ mr: 3, ...(open && { display: 'none' }) }} />
+                        <TitleLogo sx={{ ...(open && { display: 'none' }) }}>
+                            <Typography variant="span">
+                                COLECTIVO DE ABOGADOS
+                            </Typography>
 
-                <List>
-                    {pages.map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-               
-            </Drawer>
-            <Main open={open}>
-                <DrawerHeader />
-              
-            </Main>
-        </Box>
-    </>
-        
+                            <Typography variant="h6">
+                                GARCIA & ASOCIADOS
+                            </Typography>
+                        </TitleLogo>
+                        <Box sx={{ mr: 2, mt: 0, display: { xs: 'none', md: 'flex' }, ...(open && { display: 'none' }) }}>
+                            {pagesMenu.map((page) => (
+                                    <LinkStyle
+                                    to={`${page.link}`} key={page.name}>
+                                        <Button
+                                            key={page}
+                                            variant="text"
+                                            color="primary"
+                                            sx={{ ":hover":{backgroundColor: '#C2383A' },  ml: 2, mt: 4, color: 'white', display: 'block' }}
+                                        >
+                                            {page.name}
+                                        </Button>
+                                    </LinkStyle>
+                            ))}
+                        </Box>
+                        <ContainerImg src={logo} alt="Garcia&Asociados" sx={{ ml: 6, display: { lg: 'none' }, ...(!open && { display: 'none' }) }} />
+                    </Toolbar>
+                </AppBar>
+                <Drawer
+                    sx={{
+                        width: drawerWidth,
+                        flexShrink: 0,
+                        '& .MuiDrawer-paper': {
+                            width: drawerWidth,
+                            boxSizing: 'border-box',
+                            background: '#C2383A'
+                        },
+                    }}
+                    variant="persistent"
+                    anchor="left"
+                    open={open}
+                >
+                    <TitleLogoMobil>
+                        <Typography variant="h6" color="white">
+                            <strong>
+                                COLECTIVO DE ABOGADOS
+                            </strong>
+                        </Typography>
+
+                        <DrawerHeader>
+                            <IconButton onClick={handleDrawerClose}>
+                                {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+                            </IconButton>
+                        </DrawerHeader>
+                        <Divider />
+                    </TitleLogoMobil>
+
+                    <List>
+                        {pages.map((text, index) => (
+                            <ListItem button key={text}>
+                                <ListItemIcon>
+                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                                </ListItemIcon>
+                                <ListItemText primary={text} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Divider />
+
+                </Drawer>
+                <Main open={open}>
+                    <DrawerHeader />
+
+                </Main>
+            </Box>
+        </>
+
     );
 }
