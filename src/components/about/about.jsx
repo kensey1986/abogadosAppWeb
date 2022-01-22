@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
     color: theme.palette.text.secondary,
 }));
 
-const About = () => {
+const AboutComponent = () => {
     return (
         <Container  sx={{  marginLeft: {  xl:24 }, marginY: { xs: 2  }, }}>
             <Grid container spacing={5} >
@@ -86,4 +86,4 @@ const About = () => {
     )
 }
 
-export default About
+export default AboutComponent
