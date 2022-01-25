@@ -21,6 +21,7 @@ export const Footer = () => {
                <span>AV. 4. Nº 11-17 </span>
                <h5>EDIFICIO BEN-HUR</h5>
                <span>CÚCUTA - NORTE DE SANTANDER</span>
+               <span>Email: colectivodeabogadosgarcia-asociados@hotmail.com</span>
                </Col>
                <Col className='container-logo-footer'>
                <Image 

@@ -27,7 +27,7 @@ import { withThemeCreator } from '@mui/styles';
 
 
 const drawerWidth = 225;
-const pages = ['INICIO', 'SERVICIOS', 'QUIENES SOMOS', 'NUESTROS PROFESIONALES', 'CONTACTANOS'];
+// const pages = ['INICIO', 'SERVICIOS', 'QUIENES SOMOS', 'NUESTROS PROFESIONALES', 'CONTACTANOS'];
 const pagesMenu = [{
     "name": "INICIO",
     "link": "/"
@@ -119,7 +119,7 @@ const LinkStyle = styled(Link)(() => ({
     textDecoration: 'none',
     '&:hover': {
         backgroundColor: '#C2383A',
-      },
+    },
 }));
 
 export const NavBar1 = () => {
@@ -163,17 +163,17 @@ export const NavBar1 = () => {
                         </TitleLogo>
                         <Box sx={{ mr: 2, mt: 0, display: { xs: 'none', md: 'flex' }, ...(open && { display: 'none' }) }}>
                             {pagesMenu.map((page) => (
-                                    <LinkStyle
+                                <LinkStyle
                                     to={`${page.link}`} key={page.name}>
-                                        <Button
-                                            key={page}
-                                            variant="text"
-                                            color="primary"
-                                            sx={{ ":hover":{backgroundColor: '#C2383A' },  ml: 2, mt: 4, color: 'white', display: 'block' }}
-                                        >
-                                            {page.name}
-                                        </Button>
-                                    </LinkStyle>
+                                    <Button
+                                        key={page}
+                                        variant="text"
+                                        color="primary"
+                                        sx={{ ":hover": { backgroundColor: '#C2383A' }, ml: 2, mt: 4, color: 'white', display: 'block' }}
+                                    >
+                                        {page.name}
+                                    </Button>
+                                </LinkStyle>
                             ))}
                         </Box>
                         <ContainerImg src={logo} alt="Garcia&Asociados" sx={{ ml: 6, display: { lg: 'none' }, ...(!open && { display: 'none' }) }} />
@@ -209,12 +209,14 @@ export const NavBar1 = () => {
                     </TitleLogoMobil>
 
                     <List>
-                        {pages.map((text, index) => (
-                            <ListItem button key={text}>
-                                <ListItemIcon>
-                                    {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                                </ListItemIcon>
-                                <ListItemText primary={text} />
+                        {pagesMenu.map((page, index) => (
+
+                            <ListItem button key={page.name}>
+                                <LinkStyle
+                                    to={`${page.link}`}>
+                               
+                                <ListItemText sx={{ color: 'whitesmoke'}} primary={page.name} />
+                                </LinkStyle>
                             </ListItem>
                         ))}
                     </List>
