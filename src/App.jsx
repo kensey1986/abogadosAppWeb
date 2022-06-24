@@ -1,6 +1,7 @@
 import React, { useContext, Fragment, } from "react";
 import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
 import { DataContext } from "./context/Context";
+import { Typography } from "@mui/material";
 
 import './App.css';
 import { NavBar1 } from "./components/navBar/navBar-1";
@@ -16,6 +17,7 @@ import { themeConfig } from './themes/theme';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
+import { Contac } from "./pages/contac/contac";
 
 function App() {
   // const {  } = useContext(DataContext);
@@ -42,6 +44,7 @@ function App() {
                 <Route path='/lawyers' element={<Lawyers />} />
                 <Route path='/lawyers/:lawyersId' element={<LawyersDetails />} />
                 <Route path='/about' element={<About />} />
+                <Route path='/contac' element={<Contac />} />
                 <Route element={<Default />} />
               </Routes>
           </Grid>

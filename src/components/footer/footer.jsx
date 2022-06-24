@@ -11,17 +11,17 @@ export const Footer = () => {
         <div className='container-footer'>
            <Row>
                <Col>
-               <h1>
+               <h2>
                    <strong>
                Contactar 
                    </strong>
-                   <span className='icon-whatsapp'><FaWhatsapp/></span>
-               </h1>
-               <h4>PRINCIPAL:</h4>
+                   <span><a className='icon-whatsapp' href="https://wa.me/573114775792" target="_blank"><FaWhatsapp/></a></span>
+               </h2>
+               <h5>PRINCIPAL:</h5>
                <span>AV. 4. Nº 11-17 </span>
                <h5>EDIFICIO BEN-HUR</h5>
-               <span>CÚCUTA - NORTE DE SANTANDER</span>
-               <span>Email: colectivodeabogadosgarcia-asociados@hotmail.com</span>
+               <p>CÚCUTA - NORTE DE SANTANDER</p>
+               <p>Email: colectivodeabogadosgarcia-asociados@hotmail.com</p>
                </Col>
                <Col className='container-logo-footer'>
                <Image 
