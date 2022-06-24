@@ -50,7 +50,7 @@ export const Lawyers = () => {
                 {
                     data.map((lawyers) => {
                         return (
-                            <Grid item={true} item xs={12} sm={12} md={6}  lg={4}  key={uuidv4()}>
+                            <Grid item={true}  xs={12} sm={12} md={6}  lg={4}  key={uuidv4()}>
                                 <Item>
                                     <LawyersComponent 
                                     lawyers={lawyers} 

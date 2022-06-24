@@ -118,7 +118,7 @@ const ContainerImg = styled('img')(() => ({
 const LinkStyle = styled(Link)(() => ({
     textDecoration: 'none',
     '&:hover': {
-        backgroundColor: '#C2383A',
+        // backgroundColor: '#C2383A',
     },
 }));
 
@@ -169,7 +169,8 @@ export const NavBar1 = () => {
                                         key={page}
                                         variant="text"
                                         color="primary"
-                                        sx={{ ":hover": { backgroundColor: '#C2383A' }, ml: 2, mt: 4, color: 'white', display: 'block' }}
+                                        sx={{ ":hover": { backgroundColor: '#C2383A' } , ml: 2, mt: 4, color: 'white', display: 'block' }}
+                                        
                                     >
                                         {page.name}
                                     </Button>
