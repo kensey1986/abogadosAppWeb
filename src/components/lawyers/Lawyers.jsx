@@ -14,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { CardActionArea } from '@mui/material';
 
 export const LawyersComponent = (props) => {
 
@@ -52,12 +53,21 @@ const {name, img, num, whts, description, initial, id} = props.lawyers;
                                             }
                                             title={name}
                                         />
-                                        <CardMedia
+                                        <CardActionArea>
+                                            <CardActions>
+
+                                            <LinkStyle to={`/lawyers/${id}`}>
+                                            <CardMedia
                                             component="img"
                                             sx={{ marginLeft: 10, height: { xs: 200, sm: 300, lg: 300 }, width: { xs: 200, sm: 300, lg: 214 } }}
                                             image={img}
                                             alt="Paella dish"
-                                        />
+                                            
+                                        /> 
+                                            </LinkStyle>
+                                            </CardActions>
+                                        
+                                        </CardActionArea>
                                         <CardContent>
                                             <Typography sx={{ textAlign: 'left' }}
                                                 variant="h6" color="text.secondary">
