@@ -42,6 +42,7 @@ const LinkStyle = styled(Link)(() => ({
 }));
 
 const {name, img, num, whts, description, initial, id} = props.lawyers;
+console.log(img)
 
   return (
     <Card >

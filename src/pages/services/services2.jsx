@@ -10,15 +10,28 @@ import Typography from "@mui/material/Typography";
 import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
 
-import Grid from '@mui/material/Grid';
-
 export const Services = () => {
   const { services } = useContext(DataContext);
  
   return (
     
     <main>
-      
+
+      {/* <div className='container-service'>
+        <div class="jumbotron">
+            <h1 class="display-4">Nuestros Servicios</h1>
+            <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+            <hr class="my-4" />
+            <Card style={{ width: '18rem' }}>
+                <Card.Header>Featured</Card.Header>
+                <ListGroup variant="flush">
+                    <ListGroup.Item>Cras justo odio</ListGroup.Item>
+                    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
+                    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                </ListGroup>
+            </Card>
+        </div>
+    </div> */}
     <Container maxWidth="sm">
             <Typography
               component="h3"
@@ -48,22 +61,7 @@ export const Services = () => {
               <Button href="mailto:colectivodeabogadosgarcia-asociados@hotmail.com" variant="outlined" endIcon={<EmailIcon />}>Correo Electronico</Button >
             </Stack>
           </Container>
-
-          <Container sx={{ py: 8 }} maxWidth="lg">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            {
-             services.map(services => {
-              return (<ServicesComponent services ={services} key={uuidv4()}>
-
-              </ServicesComponent>)
-            }) 
-            }
-          </Grid>
-        </Container>
-
-
-      {/* <Container maxWidth="sm">
+      <Container maxWidth="sm">
         <div>
           {
             services.map(services => {
@@ -73,7 +71,7 @@ export const Services = () => {
             })
           }
         </div>
-      </Container> */}
+      </Container>
     </main>
   );
 };
