@@ -1,7 +1,5 @@
-import React, { useContext, Fragment, } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
-import { DataContext } from "./context/Context";
-import { Typography } from "@mui/material";
 
 import './App.css';
 import { NavBar1 } from "./components/navBar/navBar-1";

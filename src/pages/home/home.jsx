@@ -1,6 +1,5 @@
 import {CarrouselAuto} from '../../components/carousel/carousel'
 import AboutComponent from '../../components/about/about'
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 

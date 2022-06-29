@@ -7,7 +7,6 @@ import Container from '@mui/material/Container';
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
-import mision from '../../assets/logo/misionpage.jpg'
 import people from '../../assets/all/people.jpg'
 
 
