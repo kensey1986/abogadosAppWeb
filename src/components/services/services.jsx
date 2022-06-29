@@ -26,7 +26,7 @@ export const ServicesComponent = (props) => {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
             >
-                <Typography variant="h6">{category}</Typography>
+            <Typography variant="h6">{category}</Typography>
             </AccordionSummary>
             <AccordionDetails>
                 <Typography>{description}</Typography>

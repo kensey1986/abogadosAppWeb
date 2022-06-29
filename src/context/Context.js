@@ -14,7 +14,7 @@ export const DataContext = React.createContext();
 
 const DataProvider = (props) => {
 
-  const [data, setData] = useState(
+  const [data] = useState(
     [
       {
         "id":1,
@@ -64,7 +64,7 @@ const DataProvider = (props) => {
     ]
   );
 
-  const [services, SetServices] = useState(
+  const [services] = useState(
     [
       {
         'category': 'ASESORIA Y REPRESENTACION JURIDICA.',

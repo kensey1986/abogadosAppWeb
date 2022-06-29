@@ -15,7 +15,7 @@ export const LawyersDetails = (props) => {
   const { data } = useContext(DataContext);
   const id = parseInt(params.lawyersId);
   const detail = data.filter((datos) => datos.id === id);
-  const { name, img, num, whts, description, initial } = detail[0];
+  const { name, img} = detail[0];
   // useEffect(() => {
   // }, []);
 
