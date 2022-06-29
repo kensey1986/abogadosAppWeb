@@ -15,7 +15,7 @@ export const Footer = () => {
                    <strong>
                Contactar 
                    </strong>
-                   <span><a className='icon-whatsapp' href="https://wa.me/573114775792" target="_blank"><FaWhatsapp/></a></span>
+                   <span><a className='icon-whatsapp' href="https://wa.me/573114775792" target="_blank" rel="noopener noreferrer"><FaWhatsapp/></a></span>
                </h2>
                <h5>PRINCIPAL:</h5>
                <span>AV. 4. Nº 11-17 </span>
