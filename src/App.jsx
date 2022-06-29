@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import './App.css';
 import { NavBar1 } from "./components/navBar/navBar-1";
@@ -13,19 +13,12 @@ import { Footer } from "./components/footer/footer";
 import { ThemeProvider } from '@mui/material/styles';
 import { themeConfig } from './themes/theme';
 import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
 import { Contac } from "./pages/contac/contac";
 
 function App() {
   // const {  } = useContext(DataContext);
 
-  const Item = styled(Paper)(({ theme }) => ({
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  }));
+  
 
   return (
 
