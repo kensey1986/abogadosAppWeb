@@ -283,7 +283,7 @@ const DataProvider = (props) => {
   return (
     <DataContext.Provider
       value={{
-        data
+        data , services
       }}
     >
       {props.children}
