@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import SendIcon from '@mui/icons-material/Send';
 import EmailIcon from '@mui/icons-material/Email';
+import location2 from '../../assets/all/location.jpeg';
 
 export const Contac = () => {
   return (
@@ -85,6 +86,21 @@ export const Contac = () => {
                     {/* <Button size="small">View</Button>
                     <Button size="small">Edit</Button> */}
                   </CardActions>
+                </Card>
+                <Card 
+                  sx={{
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    marginTop:2
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    sx={{ height:500}}
+                    image={location2}
+                  />
+                  
                 </Card>
               </Grid>
             </Grid>
